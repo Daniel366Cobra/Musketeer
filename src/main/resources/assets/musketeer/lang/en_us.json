@@ -1,0 +1,42 @@
+{
+  "item.musketeer.wooden_knife": "Wooden Knife",
+  "item.musketeer.stone_knife": "Stone Knife",
+  "item.musketeer.iron_knife": "Iron Knife",
+  "item.musketeer.golden_knife": "Golden Knife",
+  "item.musketeer.diamond_knife": "Diamond Knife",
+  "item.musketeer.netherite_knife": "Netherite Knife",
+  "item.musketeer.musket_ball": "Musket Ball",
+  "item.musketeer.flintlock_musket": "Flintlock Musket",
+  "item.musketeer.musket.loaded": "§c§lLoaded§r",
+  "item.musketeer.musket.shift_info_hint": "§7§oHold [Shift] for more info§r",
+  "item.musketeer.musket.shift_info_1": "§a[RMB]: §7hold to load, then press to fire§r",
+  "item.musketeer.musket.shift_info_2": "§a[LMB]: §7butt-stroke attack§r",
+  "item.musketeer.musket.shift_info_3": "§a[Crouch] §7for precise aiming§r",
+
+  "entity.musketeer.musket_projectile": "Musket Projectile",
+
+  "sound.bullet.hit": "Bullet hits",
+  "sound.bullet.ricochet": "Bullet ricochets",
+  "sound.musket.shot": "Musket shoots",
+  "sound.musket.buttstroke": "Musket butt stroke",
+  "sound.musket.misfire": "Musket misfires",
+  "sound.musket.cock_start": "Musket cocking",
+  "sound.musket.cock_half": "Musket half-cocked",
+  "sound.musket.powder_pour": "Powder pouring",
+  "sound.musket.cock_full": "Musket cocked and loaded",
+
+  "death.attack.bullet": "%1$s was sniped by %2$s",
+  "death.attack.bullet.name": "%1$s was sniped by %2$s using %3$s",
+  "death.attack.musket_buttstroke": "%1$s was butt-stroked by %2$s",
+  "death.attack.musket_buttstroke.name": "%1$s was butt-stroked by %2$s using %3$s",
+  "death.attack.musket_explosion": "%1$s's old musket got its revenge",
+
+  "advancements.musketeer.root.title": "Musketeer",
+  "advancements.musketeer.root.description": "Flintlock, Stock and One Smoking Barrel",
+  "advancements.musketeer.get_gunpowder.title": "Not Just for Fireworks",
+  "advancements.musketeer.get_gunpowder.description": "Obtain some Gunpowder",
+  "advancements.musketeer.get_flintlock_musket.title": "Keep the Powder Dry",
+  "advancements.musketeer.get_flintlock_musket.description": "Make a Flintlock Musket",
+
+  "modmenu.descriptionTranslation.musketeer": "Flintlock, Stock and One Smoking Barrel"
+}

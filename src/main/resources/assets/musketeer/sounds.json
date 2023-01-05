@@ -1,0 +1,108 @@
+{
+  "musket_cock_start": {
+    "subtitle": "sound.musket.cock_start",
+    "sounds": [
+      {
+        "name": "musketeer:musket_cock_start",
+        "stream": false
+      }
+    ]
+  },
+  "musket_cock_half": {
+    "subtitle": "sound.musket.cock_half",
+    "sounds": [
+      {
+        "name": "musketeer:musket_cock_half",
+        "stream": false
+      }
+    ]
+  },
+  "musket_powder_pour": {
+    "subtitle": "sound.musket.powder_pour",
+    "sounds": [
+      {
+        "name": "musketeer:musket_powder_pour",
+        "stream": false
+      }
+    ]
+  },
+  "musket_cock_full": {
+    "subtitle": "sound.musket.cock_full",
+    "sounds": [
+      {
+        "name": "musketeer:musket_cock_full",
+        "stream": false
+      }
+    ]
+  },
+  "musket_buttstroke": {
+    "subtitle": "sound.musket.buttstroke",
+    "sounds": [
+      {
+        "name": "musketeer:musket_buttstroke1",
+        "stream": false
+      },
+      {
+        "name": "musketeer:musket_buttstroke2",
+        "stream": false
+      },
+      {
+        "name": "musketeer:musket_buttstroke3",
+        "stream": false
+      },
+      {
+        "name": "musketeer:musket_buttstroke4",
+        "stream": false
+      }
+    ]
+  },
+  "musket_shot": {
+    "subtitle": "sound.musket.shot",
+    "sounds": [
+      {
+        "name": "musketeer:gunshot1",
+        "stream": false
+      },
+      {
+        "name": "musketeer:gunshot2",
+        "stream": false
+      },
+      {
+        "name": "musketeer:gunshot3",
+        "stream": false
+      },
+      {
+        "name": "musketeer:gunshot4",
+        "stream": false
+      }
+    ]
+  },
+  "musket_misfire": {
+    "subtitle": "sound.musket.misfire",
+    "sounds": [
+      {
+        "name": "musketeer:musket_misfire",
+        "stream": false
+      }
+    ]
+  },
+
+  "bullet_hit": {
+    "subtitle": "sound.bullet.hit",
+    "sounds": [
+      {
+        "name": "musketeer:bullet_hit",
+        "stream": false
+      }
+    ]
+  },
+  "bullet_ricochet": {
+    "subtitle": "sound.bullet.ricochet",
+    "sounds": [
+      {
+        "name": "musketeer:bullet_ricochet",
+        "stream": false
+      }
+    ]
+  }
+}

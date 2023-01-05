@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "musketeer:item/diamond_knife"
+  }
+}

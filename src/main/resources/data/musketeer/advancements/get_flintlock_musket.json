@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "musketeer:flintlock_musket"
+    },
+    "title": {
+      "translate": "advancements.musketeer.get_flintlock_musket.title"
+    },
+    "description": {
+      "translate": "advancements.musketeer.get_flintlock_musket.description"
+    },
+    "frame": "task"
+  },
+  "parent": "musketeer:get_gunpowder",
+  "rewards": {
+    "experience": 50
+  },
+  "criteria": {
+    "has_musket": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{"items":["musketeer:flintlock_musket"]}]
+      }
+    }
+  }
+}

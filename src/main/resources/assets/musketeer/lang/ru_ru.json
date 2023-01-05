@@ -1,0 +1,42 @@
+{
+  "item.musketeer.wooden_knife": "Деревянный нож",
+  "item.musketeer.stone_knife": "Каменный нож",
+  "item.musketeer.iron_knife": "Железный нож",
+  "item.musketeer.golden_knife": "Золотой нож",
+  "item.musketeer.diamond_knife": "Алмазный нож",
+  "item.musketeer.netherite_knife": "Незеритовый нож",
+  "item.musketeer.flintlock_musket": "Кремнёвый мушкет",
+  "item.musketeer.musket.loaded": "§c§lЗаряжен§r",
+  "item.musketeer.musket.shift_info_hint": "§7§o[Shift] для дополнительной информации§r",
+  "item.musketeer.musket.shift_info_1": "§a[ПКМ]: зарядка (удерживать), выстрел§r",
+  "item.musketeer.musket.shift_info_2": "§a[ЛКМ]: удар прикладом§r",
+  "item.musketeer.musket.shift_info_3": "§a[Присесть] для точного прицеливания§r",
+  "item.musketeer.musket_ball": "Мушкетный патрон",
+
+  "entity.musketeer.musket_projectile": "Мушкетная пуля",
+
+  "sound.bullet.hit": "Попадание пули",
+  "sound.bullet.ricochet": "Рикошет пули",
+  "sound.musket.shot": "Выстрел мушкета",
+  "sound.musket.buttstroke": "Удар прикладом мушкета",
+  "sound.musket.misfire": "Осечка мушкета",
+  "sound.musket.cock_start": "Мушкет взводится",
+  "sound.musket.cock_half": "Мушкет на полувзводе",
+  "sound.musket.powder_pour": "Порох сыплется",
+  "sound.musket.cock_full": "Мушкет взведен",
+
+  "death.attack.bullet": "%1$s не ушел от пули %2$s",
+  "death.attack.bullet.name": "%1$s застрелен %2$s из %3$s",
+  "death.attack.musket_buttstroke": "%1$s забит прикладом %2$s",
+  "death.attack.musket_buttstroke.name": "%1$s забит прикладом %2$s с помощью %3$s",
+  "death.attack.musket_explosion": "%1$s не следил за оружием",
+
+  "advancements.musketeer.root.title": "Мушкетер",
+  "advancements.musketeer.root.description": "Кремень, порох, один ствол",
+  "advancements.musketeer.get_gunpowder.title": "Не только для фейерверков!",
+  "advancements.musketeer.get_gunpowder.description": "Раздобудьте немного пороха",
+  "advancements.musketeer.get_flintlock_musket.title": "Держи порох сухим!",
+  "advancements.musketeer.get_flintlock_musket.description": "Изготовьте Кремневый мушкет",
+
+  "modmenu.descriptionTranslation.musketeer": "Кремень, порох, один ствол"
+}
