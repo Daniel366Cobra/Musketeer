@@ -1,0 +1,16 @@
+{
+  "type": "musketeer:smithing",
+  "base":
+  {
+    "item": "musketeer:flintlock_musket"
+  },
+  "addition":
+  {
+    "item": "minecraft:iron_ingot"
+  },
+  "result":
+  {
+    "item": "musketeer:flintlock_musket",
+    "nbt": "BayonetAttached"
+  }
+}

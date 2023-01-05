@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.RangedWeaponItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -54,27 +55,50 @@ public class MusketItem extends RangedWeaponItem implements FabricItem {
         return 16;
     }
 
-    //LMB - buttstroke attack. Has a chance to briefly stun the target.
+    //LMB - buttstroke or bayonet attack. Melee attack inflicts a brief slowdown and has a 50% chance to briefly blind (buttstroke) or weaken (bayonet) the target.
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+
         if (attacker instanceof PlayerEntity attackerPlayerEntity
                 && !attackerPlayerEntity.getItemCooldownManager().isCoolingDown(this)) {
 
-            DamageSource musketMeleeDamageSource = new EntityDamageSource("musket_buttstroke", attackerPlayerEntity);
-            target.damage(musketMeleeDamageSource, 2);
-            if (attackerPlayerEntity.getRandom().nextBoolean()) {
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 20), attackerPlayerEntity);
-                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 4), attackerPlayerEntity);
+            DamageSource musketMeleeDamageSource;
+            boolean bayonetAttached = isBayonetAttached(stack);
+
+            if (bayonetAttached) {
+                musketMeleeDamageSource = new EntityDamageSource("musket_bayonet", attackerPlayerEntity);
+                target.damage(musketMeleeDamageSource, 5);
+                if (attackerPlayerEntity.getRandom().nextBoolean()) {
+                    target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 20), attackerPlayerEntity);
+                    target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 4), attackerPlayerEntity);
+                }
+                target.setVelocity(attackerPlayerEntity.getRotationVector().add(0.0f, 0.5f, 0.0f).multiply(0.75f));
+                attackerPlayerEntity.getWorld().playSound(null,
+                        attackerPlayerEntity.getX(), attackerPlayerEntity.getY(), attackerPlayerEntity.getZ(),
+                        SoundEvents.ENTITY_PLAYER_HURT_SWEET_BERRY_BUSH, SoundCategory.PLAYERS, 1.0F, 0.8F);
+
+                if (!attackerPlayerEntity.isCreative())
+                    stack.damage(3, attackerPlayerEntity, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+
+                attackerPlayerEntity.getItemCooldownManager().set(this, 30);
+            } else
+            {
+                musketMeleeDamageSource = new EntityDamageSource("musket_buttstroke", attackerPlayerEntity);
+                target.damage(musketMeleeDamageSource, 2);
+                if (attackerPlayerEntity.getRandom().nextBoolean()) {
+                    target.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 20), attackerPlayerEntity);
+                    target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 4), attackerPlayerEntity);
+                }
+                target.setVelocity(attackerPlayerEntity.getRotationVector().add(0.0f, 0.5f, 0.0f).multiply(1.25f));
+                attackerPlayerEntity.getWorld().playSound(null,
+                        attackerPlayerEntity.getX(), attackerPlayerEntity.getY(), attackerPlayerEntity.getZ(),
+                        ModSounds.MUSKET_BUTTSTROKE, SoundCategory.PLAYERS, 1.0F, 0.8F);
+
+                if (!attackerPlayerEntity.isCreative())
+                    stack.damage(3, attackerPlayerEntity, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+
+                attackerPlayerEntity.getItemCooldownManager().set(this, 20);
             }
-            target.setVelocity(attackerPlayerEntity.getRotationVector().add(0.0f, 0.5f, 0.0f).multiply(1.25f));
-            attackerPlayerEntity.getWorld().playSound(null,
-                    attackerPlayerEntity.getX(), attackerPlayerEntity.getY(), attackerPlayerEntity.getZ(),
-                    ModSounds.MUSKET_BUTTSTROKE, SoundCategory.PLAYERS, 1.0F, 0.8F);
-
-            if (!attackerPlayerEntity.isCreative())
-                stack.damage(3, attackerPlayerEntity, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
-
-            attackerPlayerEntity.getItemCooldownManager().set(this, 20);
         }
         return true;
     }
@@ -125,7 +149,6 @@ public class MusketItem extends RangedWeaponItem implements FabricItem {
         return ammoStack;
     }
 
-
     public static boolean isAmmo(ItemStack stack) {
         return stack.getItem() instanceof MusketBallItem;
     }
@@ -167,6 +190,16 @@ public class MusketItem extends RangedWeaponItem implements FabricItem {
         }
     }
 
+    public static void setBayonetAttached(ItemStack stack, boolean bayonetAttached) {
+        NbtCompound nbtCompound = stack.getOrCreateNbt();
+        nbtCompound.putBoolean(BAYONET_ATTACHED_KEY, bayonetAttached);
+    }
+
+    public static boolean isBayonetAttached(ItemStack stack) {
+        NbtCompound nbtCompound = stack.getNbt();
+        return nbtCompound != null && nbtCompound.getBoolean(BAYONET_ATTACHED_KEY);
+    }
+
     public static boolean isLoaded(ItemStack stack) {
         NbtCompound nbtCompound = stack.getNbt();
         return nbtCompound != null && nbtCompound.getBoolean(LOADED_KEY);
@@ -177,15 +210,6 @@ public class MusketItem extends RangedWeaponItem implements FabricItem {
         nbtCompound.putBoolean(LOADED_KEY, loaded);
     }
 
-    public static boolean isBayonetAttached(ItemStack stack) {
-        NbtCompound nbtCompound = stack.getNbt();
-        return nbtCompound != null && nbtCompound.getBoolean(BAYONET_ATTACHED_KEY);
-    }
-
-    public static void setBayonetAttached(ItemStack stack, boolean bayonetAttached) {
-        NbtCompound nbtCompound = stack.getOrCreateNbt();
-        nbtCompound.putBoolean(BAYONET_ATTACHED_KEY, bayonetAttached);
-    }
 
     public static void shoot(World world, LivingEntity shooter, ItemStack weaponStack, float divergence) {
         if (world.isClient()) {

@@ -9,7 +9,7 @@
   "item.musketeer.musket.loaded": "§c§lЗаряжен§r",
   "item.musketeer.musket.shift_info_hint": "§7§o[Shift] для дополнительной информации§r",
   "item.musketeer.musket.shift_info_1": "§a[ПКМ]: зарядка (удерживать), выстрел§r",
-  "item.musketeer.musket.shift_info_2": "§a[ЛКМ]: удар прикладом§r",
+  "item.musketeer.musket.shift_info_2": "§a[ЛКМ]: удар прикладом или укол штыком (если примкнут)§r",
   "item.musketeer.musket.shift_info_3": "§a[Присесть] для точного прицеливания§r",
   "item.musketeer.musket_ball": "Мушкетный патрон",
 
@@ -19,6 +19,7 @@
   "sound.bullet.ricochet": "Рикошет пули",
   "sound.musket.shot": "Выстрел мушкета",
   "sound.musket.buttstroke": "Удар прикладом мушкета",
+  "sound.musket.bayonet_strike": "Удар штыком мушкета",
   "sound.musket.misfire": "Осечка мушкета",
   "sound.musket.cock_start": "Мушкет взводится",
   "sound.musket.cock_half": "Мушкет на полувзводе",
@@ -29,6 +30,8 @@
   "death.attack.bullet.name": "%1$s застрелен %2$s из %3$s",
   "death.attack.musket_buttstroke": "%1$s забит прикладом %2$s",
   "death.attack.musket_buttstroke.name": "%1$s забит прикладом %2$s с помощью %3$s",
+  "death.attack.musket_bayonet": "%1$s насажен на штык %2$s",
+  "death.attack.musket_bayonet.name": "%1$s насажен на штык %2$s с помощью %3$s",
   "death.attack.musket_explosion": "%1$s не следил за оружием",
 
   "advancements.musketeer.root.title": "Мушкетер",

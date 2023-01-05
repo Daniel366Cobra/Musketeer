@@ -1,5 +1,6 @@
 package com.daniel366cobra.musketeer;
 
+import com.daniel366cobra.musketeer.init.ModCraftingRecipes;
 import com.daniel366cobra.musketeer.init.ModEntities;
 import com.daniel366cobra.musketeer.init.ModItems;
 import com.daniel366cobra.musketeer.init.ModSounds;
@@ -26,6 +27,7 @@ public class Musketeer implements ModInitializer {
 
 		ModEntities.register();
 		ModItems.register();
+		ModCraftingRecipes.register();
 		ModSounds.register();
 
 	}
